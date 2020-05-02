@@ -12,7 +12,10 @@ The reasons I built this was because I wanted to learn some more JS.
 let element = document.getElementById('terminal-text');
 let tt = new TerminalTyper(element);
 tt.instant('<p>Hello World</p>'); // Add text instantly
-tt.type('<p>This text is typed out to the element</p>').then(tt => { // Add typed text
-  console.warn('Type function is done');
+tt.type('<p>This text is typed out to the element</p>').then(async (tt) => { // Add typed text
+  console.warn('tt.type() is done. Now sleep for one second.');
+  tt.sleep(1000).then(tt => {
+    console.warn('Slept for one second.');
+  });
 });
 ```
