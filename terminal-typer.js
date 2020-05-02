@@ -30,6 +30,11 @@ class TerminalTyper {
     element.innerHTML += html;
   }
 
+  async sleep(time) {
+    await new Promise(r => setTimeout(r, time));
+    return this;
+  }
+
   _clearState() {
     this._cursor = 0;
     this._elements = [];
@@ -77,7 +82,8 @@ class TerminalTyper {
 
     // Output single tag and increment cursor to skip over it.
     if (singleTag) {
-      this._element.innerHTML += tag;
+      //this._element.innerHTML += tag;
+      this._getCurrentElement().innerHTML += tag;
       this._cursor += tag.length;
       return;
     }
