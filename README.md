@@ -19,3 +19,7 @@ tt.type('<p>This text is typed out to the element</p>').then(async (tt) => { // 
   });
 });
 ```
+
+# Todo
+
+- Convert to module
